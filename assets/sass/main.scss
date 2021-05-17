@@ -1,0 +1,27 @@
+$violet:#72147e;
+$pink:#f21170;
+$yellow:#fa9905;
+$orange:#ff5200;
+@font-face {
+    font-family: base-font;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: bold-font;
+    src: url(../fonts/Roboto-Bold.ttf);
+}
+@font-face {
+    font-family: medium-font;
+    src: url(../fonts/Roboto-Medium.ttf);
+}
+@font-face {
+    font-family: header-font;
+    src: url(../fonts/Orbitron-Bold.ttf);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: base-font;
+}
