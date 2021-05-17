@@ -1,7 +1,7 @@
-$violet:#72147e;
-$pink:#f21170;
-$yellow:#fa9905;
-$orange:#ff5200;
+$pink:#f55c47;
+$green:#4aa96c;
+$light-green:#9fe6a0;
+$brown:#564a4a;
 @font-face {
     font-family: base-font;
     src: url(../fonts/Roboto-Regular.ttf);
@@ -25,3 +25,5 @@ $orange:#ff5200;
     scroll-behavior: smooth;
     font-family: base-font;
 }
+
+@import 'header.scss';
