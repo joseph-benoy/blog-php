@@ -1,0 +1,28 @@
+.read-more-btn{
+    background-color: $pink;
+    border-color: $pink;
+}
+.read-more-btn:hover{
+    background-color: $brown;
+    border-color: $brown;
+}
+.read-more-btn:focus{
+    background-color: $brown;
+    border-color: $brown;
+}
+#pagination-container{
+    padding: 0 10vw;
+}
+#pagination-container .row{
+    margin-top: 7vh;
+    margin-bottom: 2.8vh;
+}
+.card{
+    @media only screen and (max-width:1199px) {
+        width: 80vw !important;
+        margin-bottom: 6vh;
+    }
+}
+.card h5{
+    font-family: bold-font;
+}

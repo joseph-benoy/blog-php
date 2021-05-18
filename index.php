@@ -16,7 +16,7 @@
     <?php 
         require_once("includes/components/header.php"); 
     ?>
-    <div class="container-fluid">  
+    <div class="container-fluid" id="pagination-container">  
         <?php 
             require_once("includes/functions/pagination-handler.php");
             display_pagination(1);

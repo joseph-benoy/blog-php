@@ -7,7 +7,7 @@ Error: Undefined variable: "$pink".
 3: }
 4: #navbar a{
 5:     color: white;
-6:     font-size: 1.3em;
+6:     font-size: 1.2em;
 7: }
 
 Backtrace:
@@ -65,4 +65,4 @@ sass/header.scss:2
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$pink\".\A         on line 2 of sass/header.scss\A \A 1: #navbar{\A 2:     background-color: $pink;\A 3: }\A 4: #navbar a{\A 5:     color: white;\A 6:     font-size: 1.3em;\A 7: }"; }
+  content: "Error: Undefined variable: \"$pink\".\A         on line 2 of sass/header.scss\A \A 1: #navbar{\A 2:     background-color: $pink;\A 3: }\A 4: #navbar a{\A 5:     color: white;\A 6:     font-size: 1.2em;\A 7: }"; }

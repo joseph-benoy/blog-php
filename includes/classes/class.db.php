@@ -17,7 +17,7 @@
                 $statement->execute();
                 $total_posts = $statement->fetch()['COUNT'];
                 $no_of_pages = ceil($total_posts/$posts_per_page);
-                $statement = $this->connection->prepare("SELECT ID,TITLE,TITLE_SLAG,AUTHOR,DATE,COVER_IMAGE_LOCATION,DESCRIPTION FROM POST ORDER BY DATE DESC");
+                $statement = $this->connection->prepare("SELECT ID,TITLE,TITLE_SLAG,AUTHOR,DATE,COVER_IMAGE_LOCATION,DESCRIPTION FROM POST ORDER BY DATE DESC LIMIT $offset,$posts_per_page");
                 $statement->execute();
                 $pageination_obj = new stdClass;
                 $pageination_obj->posts = $statement->fetchAll();

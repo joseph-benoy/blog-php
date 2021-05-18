@@ -22,7 +22,7 @@
 
 #navbar a {
   color: white;
-  font-size: 1.3em; }
+  font-size: 1.2em; }
 
 #navbar-brand-btn {
   font-family: header-font !important;
@@ -37,5 +37,32 @@
 
 #dropdown-menu a {
   color: grey; }
+
+.read-more-btn {
+  background-color: #f55c47;
+  border-color: #f55c47; }
+
+.read-more-btn:hover {
+  background-color: #564a4a;
+  border-color: #564a4a; }
+
+.read-more-btn:focus {
+  background-color: #564a4a;
+  border-color: #564a4a; }
+
+#pagination-container {
+  padding: 0 10vw; }
+
+#pagination-container .row {
+  margin-top: 7vh;
+  margin-bottom: 2.8vh; }
+
+@media only screen and (max-width: 1199px) {
+  .card {
+    width: 80vw !important;
+    margin-bottom: 6vh; } }
+
+.card h5 {
+  font-family: bold-font; }
 
 /*# sourceMappingURL=main.css.map */

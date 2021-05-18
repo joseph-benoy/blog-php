@@ -10,7 +10,7 @@
                 if($col_count===0){
                     echo '<div class="row">';
                 }
-                echo '<div class="col-6">
+                echo '<div class="col-lg-6 post-card">
                 <div class="card" style="width: 32rem;">
                     <img class="card-img-top" src="admin/uploads/cover_images/'.$post['COVER_IMAGE_LOCATION'].'" alt="Card image cap">
                     <div class="card-body">
