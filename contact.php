@@ -14,8 +14,5 @@
 </head>
 <body>
 <?php require_once("includes/components/header.php"); ?>  
-<?php require_once("includes/functions/pagination-handler.php");
-    display_pagination(1);
-?>
 </body>
 </html>
