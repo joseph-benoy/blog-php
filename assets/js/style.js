@@ -14,12 +14,17 @@ function searchPost(){
         xhttp.onreadystatechange = function(){
             if(this.readyState==4&&this.status===200){
                 if(this.responseText!="0"){
-                    $json = JSON.parse(this.responseText);
-                    console.log($json);
+                    let json = JSON.parse(this.responseText);
+                    for(let key in json){
+                        let anchor = $(`<a class="dropdown-item" href="post.php?url=${json[key]['TITLE_SLAG']}">${json[key]['TITLE']}</a>`);
+                        $(`#search-result`).append(anchor);
+                    }
                     $(`#search-result`).show();
                 }
                 else{
-                    console.log('Nothing found');
+                    let anchor = $(`<a class="dropdown-item">Nothing found!</a>`);
+                    $(`#search-result`).append(anchor);
+                    $(`#search-result`).show();
                 }
             }
         };
@@ -28,6 +33,7 @@ function searchPost(){
         xhttp.send(`val=${value}`);
     }
     else{
+        $(`#search-result`).empty();
         $(`#search-result`).hide();
     }
 }
