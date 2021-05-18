@@ -43,6 +43,12 @@
   color: grey;
   font-size: 0.9em; }
 
+#search-result {
+  right: 0vw; }
+
+#search-result a {
+  color: rgba(0, 0, 0, 0.7); }
+
 .read-more-btn {
   background-color: #f55c47;
   border-color: #f55c47; }

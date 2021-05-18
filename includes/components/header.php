@@ -29,6 +29,10 @@
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" id="navbar-search-input">
+      <div class="dropdown-menu" id="search-result">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+        </div>
     </form>
   </div>
 </nav>

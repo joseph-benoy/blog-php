@@ -14,7 +14,9 @@ function searchPost(){
         xhttp.onreadystatechange = function(){
             if(this.readyState==4&&this.status===200){
                 if(this.responseText!="0"){
-                    console.log('Result = '+this.responseText);
+                    $json = JSON.parse(this.responseText);
+                    console.log($json);
+                    $(`#search-result`).show();
                 }
                 else{
                     console.log('Nothing found');
@@ -25,7 +27,11 @@ function searchPost(){
         xhttp.setRequestHeader(`Content-Type`,`application/x-www-form-urlencoded`);
         xhttp.send(`val=${value}`);
     }
+    else{
+        $(`#search-result`).hide();
+    }
 }
 $(document).ready(function(){
+    console.clear();
     $(`#navbar-search-input`).on(`input`,searchPost);
 });

@@ -5,7 +5,7 @@
         try{
             $db = new DB(...$GLOBALS['db_config_array']);
             $result = $db->search_posts($_POST['val']);
-            echo json_encode($result);
+            echo json_encode($result,JSON_PRETTY_PRINT);
         }
         catch(Exception $error){
             error_log("Search post error : {$error->getMessage()}",0);
