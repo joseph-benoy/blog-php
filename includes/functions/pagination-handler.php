@@ -15,7 +15,8 @@
                     <img class="card-img-top" src="admin/uploads/cover_images/'.$post['COVER_IMAGE_LOCATION'].'" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">'.$post['TITLE'].'</h5>
-                        <p class="card-text" style="color:rgba(0,0,0,0.7);">'.$post['DESCRIPTION'].'</p>
+                        <p class="card-text" style="color:rgba(0,0,0,0.6);">'.$post['DESCRIPTION'].'</p>
+                        <p class="card-text" style="color:rgba(0,0,0,0.7);font-size:0.9em;"><i class="bi bi-calendar-check"></i>&nbsp;&nbsp;'.$post['DATE'].'</p>
                         <a href="post.php?url='.$post['TITLE_SLAG'].'" class="btn btn-primary read-more-btn">Read more</a>
                     </div>
                 </div>

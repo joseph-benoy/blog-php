@@ -18,7 +18,11 @@
   font-family: base-font; }
 
 #navbar {
-  background-color: #f55c47; }
+  background-color: #f55c47;
+  position: sticky;
+  top: 0;
+  z-index: 500;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); }
 
 #navbar a {
   color: white;
