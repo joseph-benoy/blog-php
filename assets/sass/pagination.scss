@@ -26,3 +26,6 @@
 .card h5{
     font-family: bold-font;
 }
+.page-item a:not(.disabled){
+    color: $pink;
+}

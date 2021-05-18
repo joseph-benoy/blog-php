@@ -43,9 +43,6 @@
   color: grey;
   font-size: 0.9em; }
 
-#page-btns a {
-  color: #f55c47; }
-
 .read-more-btn {
   background-color: #f55c47;
   border-color: #f55c47; }
@@ -72,5 +69,8 @@
 
 .card h5 {
   font-family: bold-font; }
+
+.page-item a:not(.disabled) {
+  color: #f55c47; }
 
 /*# sourceMappingURL=main.css.map */
