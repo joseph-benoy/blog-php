@@ -10,7 +10,7 @@
                 if($col_count===0){
                     echo '<div class="row">';
                 }
-                echo '<div class="col-lg-6 post-card">
+                echo '<div class="col-xl-6 post-card">
                 <div class="card" style="width: 32rem;">
                     <img class="card-img-top" src="admin/uploads/cover_images/'.$post['COVER_IMAGE_LOCATION'].'" alt="Card image cap">
                     <div class="card-body">
@@ -33,23 +33,35 @@
             echo '            
                 <nav aria-label="Page navigation example">   
                 <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1">        
+                    <li class="page-item prev">
+                    <a class="page-link" href="?page='.($page_no-1).'" tabindex="-1">        
                         <span aria-hidden="true">&laquo;</span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                    <a class="page-link" href="#">
-                        <span aria-hidden="true">&raquo;</span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                    </li>
-                </ul>
-                </nav>';
+                    </li>';
+                    for($i=1;$i<=$pagination->no_of_pages;$i++){
+                        echo '<li class="page-item"><a class="page-link" href="?page='.$i.'">'.$i.'</a></li>';
+                    }
+                    if($page_no!=$pagination->no_of_pages){
+                        echo '<li class="page-item">
+                        <a class="page-link" href="?page='.($page_no+1).'">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                        </li>
+                    </ul>
+                    </nav>';
+                    }
+                    else{
+                            echo '<li class="page-item  disabled ">
+                            <a class="page-link" href="?page='.($page_no+1).'">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                            </li>
+                        </ul>
+                        </nav>';
+                    }
         }
         catch(Exception $error){
             echo "Pagination error : $error->getMessage()<br>";

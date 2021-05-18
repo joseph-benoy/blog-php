@@ -11,15 +11,22 @@
     <script src="assets/bootstrap/jquery.min.js"></script>
     <script src="assets/bootstrap/popper.min.js"></script>
     <script src="assets/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/js/style.js"></script>
 </head>
-<body>
+<body onload='pageBtnToggle(<?php echo isset($_GET["page"])?$_GET["page"]:1; ?>)'>
     <?php 
         require_once("includes/components/header.php"); 
     ?>
     <div class="container-fluid" id="pagination-container">  
         <?php 
             require_once("includes/functions/pagination-handler.php");
-            display_pagination(1);
+            if(isset($_GET['page']))
+            {
+                display_pagination($_GET['page']);
+            }
+            else{
+                display_pagination(1);
+            }
         ?>
     </div>
 </body>
