@@ -29,5 +29,11 @@
                 error_log("Get Pagination error : {$error->getMessage()}");
             }
         }
+        public function search_posts($val){
+            $statement = $this->connection->prepare("SELECT ID,TITLE,TITLE_SLAG FROM POST WHERE TITLE LIKE $val%");
+            $statement->execute();
+            $result = $statement->fetchAll();
+            return $result;
+        }
     }
 ?>
