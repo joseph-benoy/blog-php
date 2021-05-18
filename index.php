@@ -13,9 +13,14 @@
     <script src="assets/bootstrap/bootstrap.min.js"></script>
 </head>
 <body>
-<?php require_once("includes/components/header.php"); ?>  
-<?php require_once("includes/functions/pagination-handler.php");
-    display_pagination(1);
-?>
+    <?php 
+        require_once("includes/components/header.php"); 
+    ?>
+    <div class="container-fluid">  
+        <?php 
+            require_once("includes/functions/pagination-handler.php");
+            display_pagination(1);
+        ?>
+    </div>
 </body>
 </html>
