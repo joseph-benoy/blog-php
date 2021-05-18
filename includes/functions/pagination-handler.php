@@ -31,7 +31,7 @@
                 }
             }
             echo '            
-                <nav aria-label="Page navigation example">   
+                <nav aria-label="Page navigation example" id="page-btns">   
                 <ul class="pagination justify-content-center">
                     <li class="page-item prev">
                     <a class="page-link" href="?page='.($page_no-1).'" tabindex="-1">        
@@ -64,7 +64,7 @@
                     }
         }
         catch(Exception $error){
-            echo "Pagination error : $error->getMessage()<br>";
+            error_log("Pagination error : $error->getMessage()",0);
         }
     }
 ?>
