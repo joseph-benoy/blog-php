@@ -41,7 +41,7 @@
 
 #dropdown-menu a {
   color: grey;
-  font-size: 0.9em; }
+  font-size: 1em; }
 
 #search-result {
   right: 0vw; }
@@ -114,5 +114,9 @@
 #post-container h5 {
   font-family: bold-font;
   color: #f55c47; }
+
+.post-image {
+  display: block;
+  text-align: center; }
 
 /*# sourceMappingURL=main.css.map */
