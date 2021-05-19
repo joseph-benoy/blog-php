@@ -22,10 +22,10 @@
             require_once("includes/functions/pagination-handler.php");
             if(isset($_GET['page']))
             {
-                display_pagination($_GET['page']);
+                display_index_posts($_GET['page']);
             }
             else{
-                display_pagination(1);
+                display_index_posts(1);
             }
         ?>
     </div>
