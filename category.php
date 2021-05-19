@@ -17,10 +17,11 @@
     <?php 
         require_once("includes/components/header.php"); 
     ?>
-    <div class="container-fluid" id="pagination-container">  
+    <div class="container-fluid" id="pagination-container">
         <?php 
             require_once("includes/functions/pagination-handler.php");
             if(isset($_GET['category'])){
+                echo '<h2 id="category_title">Results for '.$_GET['category'].'</h2>';
                 if(isset($_GET['page']))
                 {
                     display_category_posts($_GET['category'],$_GET['page']);

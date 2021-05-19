@@ -38,3 +38,31 @@
     display: block;
     text-align: center;
 }
+#category_title{
+    color: $pink;
+    display: block;
+    margin-top: 2vw;
+    margin-bottom: 0;
+}
+.go-to-top{
+    display: none;
+    position: fixed;
+    background-color: $pink;
+    padding: 1vw 1.3vw;
+    border-radius: 2em;
+    color: white;
+    top:75vh;
+    right:4vw;
+    @media only screen and (max-width:1199px) {
+        display: none;
+        padding: 4vw 4.5vw;
+        border-radius: 2em;
+        color: white;
+        top:85vh;
+        right:4vw;
+    }
+}
+.go-to-top:hover{
+    background-color: $pink;
+    color: white;
+}

@@ -37,7 +37,20 @@ function searchPost(){
         $(`#search-result`).hide();
     }
 }
+function goTop(){
+    $(document).scrollTop(0);
+}
+function toggleTopBtn(){
+    if($(document).scrollTop()>50){
+        $(`#post-go-top`).show();
+    }
+    else{
+        $(`#post-go-top`).hide();
+    }
+}
 $(document).ready(function(){
     console.clear();
     $(`#navbar-search-input`).on(`input`,searchPost);
+    $(`#post-go-top`).click(goTop);
+    $(window).scroll(toggleTopBtn);
 });

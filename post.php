@@ -18,6 +18,7 @@
         require_once("includes/components/header.php"); 
     ?>
     <div class="container-fluid" id="post-container">
+        <a id="post-go-top" class="go-to-top"><i class="bi bi-arrow-up"></i></a>
         <?php 
             require_once("includes/functions/pagination-handler.php");
             display_post($_GET['url']);

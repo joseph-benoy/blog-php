@@ -14,7 +14,7 @@
     padding: 0 10vw;
 }
 #pagination-container .row{
-    margin-top: 7vh;
+    margin-top: 3vh;
     margin-bottom: 2.8vh;
 }
 .card{
@@ -28,4 +28,10 @@
 }
 .page-item a:not(.disabled){
     color: $pink;
+}
+#category_title{
+    color: $pink;
+    display: block;
+    margin-top: 2vw;
+    margin-bottom: 0;
 }
