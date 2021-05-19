@@ -174,4 +174,38 @@
     #message-btn:hover {
       float: none; } }
 
+#save-contact-container {
+  padding-left: 20vw;
+  padding-right: 20vw; }
+
+.save-contact-row {
+  margin-top: 10vh;
+  border: 0.3em solid #f55c47;
+  padding: 5vh 3vw;
+  text-align: justify; }
+  @media only screen and (max-width: 1199px) {
+    .save-contact-row {
+      padding: 5vh 10vw; } }
+
+.save-contact-row h1 {
+  color: #f55c47;
+  font-family: medium-font; }
+
+.save-contact-row p {
+  font-size: 1.2em; }
+
+.save-contact-btn {
+  color: white;
+  background-color: #f55c47;
+  padding: 0.6vw 1.6vw;
+  border-radius: 5px;
+  font-size: 1.1em; }
+
+.save-contact-btn:hover {
+  color: #f55c47;
+  background-color: white;
+  text-decoration: none;
+  border: 3px solid #f55c47;
+  font-family: medium-font; }
+
 /*# sourceMappingURL=main.css.map */

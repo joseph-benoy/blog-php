@@ -19,3 +19,37 @@
         float: none;
     }
 }
+#save-contact-container{
+    padding-left: 20vw;
+    padding-right: 20vw;
+}
+.save-contact-row{
+    margin-top: 10vh;
+    border:0.3em solid $pink;
+    padding: 5vh 3vw;
+    text-align: justify;
+    @media only screen and (max-width:1199px){
+        padding: 5vh 10vw;
+    }
+}
+.save-contact-row h1{
+    color:$pink;
+    font-family: medium-font;
+}
+.save-contact-row p{
+    font-size: 1.2em;
+}
+.save-contact-btn{
+    color: white;
+    background-color: $pink;
+    padding: 0.6vw 1.6vw;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+.save-contact-btn:hover{
+    color: $pink;
+    background-color: white;
+    text-decoration: none;
+    border:3px solid $pink;
+    font-family: medium-font;
+}

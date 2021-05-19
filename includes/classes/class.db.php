@@ -5,10 +5,14 @@
         public function __construct($server,$user,$password,$database){
             try{
                 $this->connection = new PDO("mysql:host=$server;dbname=$database", $user, $password);
+                $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             }
             catch(PDOException $error){
                 error_log($error->getMessage(),0);
             }
+        }
+        public function __destruct(){
+            $this->connection = null;
         }
         public function get_pagination($page_no,$posts_per_page):stdClass{
             try{
@@ -81,6 +85,28 @@
             }
             catch(PDOException $error){
                 error_log("Get Post error : {$error->getMessage()}");
+            }
+        }
+        public function save_message($data){
+            try{
+                $statement = $this->connection->prepare("SELECT COUNT(*) AS COUNT FROM MESSAGES");
+                $statement->execute();
+                $message_count = $statement->fetch(PDO::FETCH_NUM);
+                $statement = $this->connection->prepare("INSERT INTO MESSAGES (ID,FULL_NAME,EMAIL,PHONE,MESSAGES) VALUES(:id,:full_name,:email,:phone,:message)");
+                $statement->bindParam(':id',$id);
+                $statement->bindParam(':full_name',$full_name);
+                $statement->bindParam(':email',$email);
+                $statement->bindParam(':phone',$phone);
+                $statement->bindParam(':message',$message);
+                $id = "M_".$message_count[0];
+                $full_name = $data['full_name'];
+                $email = $data['email'];
+                $phone = $data['phone'];
+                $message = $data['message'];
+                return $statement->execute();
+            }
+            catch(PDOException $error){
+                error_log("Save message error : {$error->getMessage()}");
             }
         }
     }
