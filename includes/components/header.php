@@ -1,3 +1,6 @@
+<?php
+  require_once("includes/functions/get-category.php");
+?>
 <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
   <a class="navbar-brand" href="index.php" id="navbar-brand-btn">BLOG</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,8 +17,9 @@
           Categories
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-menu">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
+        <?php
+          get_category_list();
+        ?>
         </div>
       </li>
       <li class="nav-item">

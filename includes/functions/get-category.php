@@ -4,7 +4,7 @@
         $db = new DB(...$GLOBALS['db_config_array']);
         $category_array = $db->get_used_tags();
         foreach($category_array as $category){
-            echo $category['NAME']."<br>";
+            echo '<a class="dropdown-item" href="category.php?category='.$category['NAME'].'">'.$category['NAME'].'</a>';
         }
     }
 ?>

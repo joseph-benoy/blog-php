@@ -15,12 +15,12 @@
                 $offset = ($page_no-1)*$posts_per_page;
                 $statement = $this->connection->prepare("SELECT COUNT(*) AS COUNT FROM POST");
                 $statement->execute();
-                $total_posts = $statement->fetch()['COUNT'];
+                $total_posts = $statement->fetch(PDO::FETCH_ASSOC)['COUNT'];
                 $no_of_pages = ceil($total_posts/$posts_per_page);
                 $statement = $this->connection->prepare("SELECT ID,TITLE,TITLE_SLAG,AUTHOR,DATE,COVER_IMAGE_LOCATION,DESCRIPTION FROM POST ORDER BY DATE DESC LIMIT $offset,$posts_per_page");
                 $statement->execute();
                 $pageination_obj = new stdClass;
-                $pageination_obj->posts = $statement->fetchAll();
+                $pageination_obj->posts = $statement->fetchAll(PDO::FETCH_ASSOC);
                 $pageination_obj->total_post_count = $total_posts;
                 $pageination_obj->no_of_pages = $no_of_pages;
                 return $pageination_obj;
@@ -32,14 +32,14 @@
         public function search_posts($val){
             $statement = $this->connection->prepare("SELECT ID,TITLE,TITLE_SLAG FROM POST WHERE TITLE LIKE '{$val}%'");
             $statement->execute();
-            $result = $statement->fetchAll();
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
             return $result;
         }
         public function get_used_tags(){
             try{
                 $statement = $this->connection->prepare("SELECT NAME FROM TAG WHERE ID IN(SELECT TAG_ID FROM USED_TAGS)");
                 $statement->execute();
-                $result = $statement->fetchAll();
+                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
                 return $result;
             }
             catch(Exception $error){
