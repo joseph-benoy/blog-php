@@ -1,0 +1,21 @@
+#contact-form{
+    padding:5vh 10vw;
+}
+#message-btn{
+    background-color: $pink;
+    border-color: $pink;
+    float: right;
+    @media only screen and (max-width:1199px){
+        float: none;
+    }
+}
+#message-btn:hover{
+    background-color: white;
+    border-color: $pink;
+    float: right;
+    color: $pink;
+    font-family: bold-font;
+    @media only screen and (max-width:1199px){
+        float: none;
+    }
+}
