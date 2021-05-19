@@ -71,4 +71,7 @@
             error_log("Pagination error : $error->getMessage()",0);
         }
     }
+    function display_category_posts($category,$page_no){
+        
+    }
 ?>
