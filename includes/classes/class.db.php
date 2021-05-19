@@ -35,5 +35,16 @@
             $result = $statement->fetchAll();
             return $result;
         }
+        public function get_used_tags(){
+            try{
+                $statement = $this->connection->prepare("SELECT NAME FROM TAG WHERE ID IN(SELECT TAG_ID FROM USED_TAGS)");
+                $statement->execute();
+                $result = $statement->fetchAll();
+                return $result;
+            }
+            catch(Exception $error){
+                error_log("get used tag error : {$error->getMessage()}",0);
+            }
+        }
     }
 ?>
