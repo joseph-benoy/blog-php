@@ -67,15 +67,16 @@
         }
         public function get_post($title_slag){
             try{
-                $statement = $this->connection->prepare("SELECT ID,TITLE,TITLE_SLAG,AUTHOR,DATE,COVER_IMAGE_LOCATION,CONTENT FROM POST WHERE TITLE_SLAG='$title_slag'");
+                $statement = $this->connection->prepare("SELECT ID,TITLE,TITLE_SLAG,AUTHOR,DATE,DESCRIPTION,COVER_IMAGE_LOCATION,CONTENT,VIEWS FROM POST WHERE TITLE_SLAG='$title_slag'");
                 $statement->execute();
-                $pageination_obj = new stdClass;
-                $pageination_obj->posts = $statement->fetchAll(PDO::FETCH_ASSOC);
-                $pageination_obj->total_post_count = $total_posts;
-                $pageination_obj->no_of_pages = $no_of_pages;
-                return $pageination_obj;
+                $post_array = $statement->fetch(PDO::FETCH_NUM);
+                $post_obj = new Post(...$post_array);
+                $statement = $this->connection->prepare("SELECT FULL_NAME FROM ADMIN WHERE ID='{$post_array[3]}'");
+                $statement->execute();
+                $post_obj->author_name = $statement->fetch(PDO::FETCH_NUM)[0];
+                return $post_obj;
             }
-            catch(Exception $error){
+            catch(PDOException $error){
                 error_log("Get Post error : {$error->getMessage()}");
             }
         }

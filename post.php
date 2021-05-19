@@ -14,10 +14,14 @@
     <script src="assets/js/style.js"></script>
 </head>
 <body onload='pageBtnToggle(<?php echo isset($_GET["page"])?$_GET["page"]:1; ?>)'>
-    <?php 
+    <?php
         require_once("includes/components/header.php"); 
-        require_once("includes/functions/pagination-handler.php");
-        display_post($_GET['url']);
     ?>
+    <div class="container-fluid" id="post-container">
+        <?php 
+            require_once("includes/functions/pagination-handler.php");
+            display_post($_GET['url']);
+        ?>
+    </div>
 </body>
 </html>

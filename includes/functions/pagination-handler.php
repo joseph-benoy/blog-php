@@ -111,6 +111,21 @@
         try{
             $db = new DB(...$GLOBALS['db_config_array']);
             $post = $db->get_post($title_slag);
+            echo '<div class="row">';
+                echo '<h1>'.$post->title.'</h1>';
+            echo '</div>';
+            echo '<hr>';
+            echo '<div class="row">';
+                echo '<a class="post-header-links" href="author.php?name='.$post->author_name.'"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;'.$post->author_name.'</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+                echo '<a class="post-header-links" href="date-posts.php?date='.$post->date.'"><i class="bi bi-calendar-check"></i>&nbsp;&nbsp;'.$post->date.'</a>';
+            echo '</div>';
+            echo "<hr>";
+            echo '<div class="row text-center post-image">';
+                echo '<img src="admin/uploads/cover_images/'.$post->cover_image.'" class="img-fluid" alt="cover image">';
+            echo '</div>';
+            echo '<div class="row text-center" id="post-content-row">';
+                echo '<pre id="post-content">'.$post->content.'</pre>';
+            echo '</div>';
         }
         catch(Exception $error){
             error_log("display_post_error : {$error->getMessage()}",0);

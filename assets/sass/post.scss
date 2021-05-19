@@ -1,0 +1,22 @@
+.post-header-links{
+    color:$pink;
+}
+.post-header-links:hover{
+    color:$brown;
+}
+#post-container{
+    padding: 2.5vw 10vw !important;
+    @media only screen and (max-width:1199px) {
+        padding: 5vw 10vw !important;
+    }
+}
+#post-container h1{
+    font-family: bold-font;
+}
+#post-content{
+    text-align: justify;
+    font-family: base-font;
+    font-size: 1.4em;
+    margin-top: 4vh;
+    white-space: pre-wrap;
+}
