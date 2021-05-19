@@ -21,26 +21,31 @@
             function save_contact(){
                 $flag = true;
                 if(isset($_POST['full_name'])&&isset($_POST['email'])&&isset($_POST['phone'])&&isset($_POST['message'])){
-                    $db = new DB(...$GLOBALS['db_config_array']);
-                    if($db->save_message($_POST)){
-                        echo '
-                            <div class="row">
-                                <div class="col-12">
-                                    <h1 style="text-align:center;">We recieved your message!</h1>
+                    if(!($_POST['full_name']==""||$_POST['email']==""||$_POST['phone']==""||$_POST['message']=="")){
+                        $db = new DB(...$GLOBALS['db_config_array']);
+                        if($db->save_message($_POST)){
+                            echo '
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h1 style="text-align:center;">We recieved your message!</h1>
+                                    </div>
                                 </div>
+                                    <hr>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <p style="text-align:center;">Thanks for contacting us. We will reach you soon. Till then please keep in touch!</p>
+                                    </div>
+                                </div>
+                                <div class="row text-center">
+                                    <div class="col-12">
+                                        <a href="index.php" style="text-align:center;" class="save-contact-btn"><i class="bi bi-house-door"></i>&nbsp;&nbsp;Home</a>
+                                    </div>
                             </div>
-                                <hr>
-                            <div class="row">
-                                <div class="col-12">
-                                    <p style="text-align:center;">Thanks for contacting us. We will reach you soon. Till then please keep in touch!</p>
-                                </div>
-                            </div>
-                            <div class="row text-center">
-                                <div class="col-12">
-                                    <a href="index.php" style="text-align:center;" class="save-contact-btn"><i class="bi bi-house-door"></i>&nbsp;&nbsp;Home</a>
-                                </div>
-                        </div>
-                        ';
+                            ';
+                        }
+                        else{
+                            $flag = false;
+                        }
                     }
                     else{
                         $flag = false;
