@@ -8,6 +8,7 @@ function pageBtnToggle(pageNumber){
     }
 }
 function searchPost(){
+    $(`#search-result`).empty();
     let value = $(`#navbar-search-input`).val();
     if(value!=''){
         let xhttp = new XMLHttpRequest();
