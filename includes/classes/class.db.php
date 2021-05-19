@@ -46,5 +46,24 @@
                 error_log("get used tag error : {$error->getMessage()}",0);
             }
         }
+        public function get_posts_by_category($category,$page_no,$posts_per_page){
+            try{
+                $offset = ($page_no-1)*$posts_per_page;
+                $statement = $this->connection->prepare("SELECT COUNT(TAG_ID) AS COUNT FROM USED_TAGS WHERE TAG_ID IN (SELECT ID FROM TAG WHERE NAME = '{$category}')");
+                $statement->execute();
+                $total_posts = $statement->fetch(PDO::FETCH_ASSOC)['COUNT'];
+                $no_of_pages = ceil($total_posts/$posts_per_page);
+                $statement = $this->connection->prepare("SELECT ID,TITLE,TITLE_SLAG,AUTHOR,DATE,COVER_IMAGE_LOCATION,DESCRIPTION FROM POST WHERE ID IN (SELECT POST_ID FROM USED_TAGS WHERE TAG_ID IN(SELECT ID FROM TAG WHERE NAME = '{$category}')) ORDER BY DATE DESC LIMIT $offset,$posts_per_page");
+                $statement->execute();
+                $pageination_obj = new stdClass;
+                $pageination_obj->posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+                $pageination_obj->total_post_count = $total_posts;
+                $pageination_obj->no_of_pages = $no_of_pages;
+                return $pageination_obj;
+            }
+            catch(Exception $error){
+                error_log("Get Pagination error : {$error->getMessage()}");
+            }
+        }
     }
 ?>

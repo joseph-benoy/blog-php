@@ -20,8 +20,6 @@
     <div class="container-fluid" id="pagination-container">  
         <?php 
             require_once("includes/functions/pagination-handler.php");
-            require_once("includes/functions/get-category.php");
-            get_category_list();
             if(isset($_GET['category'])){
                 if(isset($_GET['page']))
                 {
