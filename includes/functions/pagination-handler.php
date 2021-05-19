@@ -107,4 +107,13 @@
             error_log("Pagination error : $error->getMessage()",0);
         }
     }
+    function display_post($title_slag){
+        try{
+            $db = new DB(...$GLOBALS['db_config_array']);
+            $post = $db->get_post($title_slag);
+        }
+        catch(Exception $error){
+            error_log("display_post_error : {$error->getMessage()}",0);
+        }
+    }
 ?>
