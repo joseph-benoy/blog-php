@@ -74,6 +74,9 @@
                 $statement = $this->connection->prepare("SELECT FULL_NAME FROM ADMIN WHERE ID='{$post_array[3]}'");
                 $statement->execute();
                 $post_obj->author_name = $statement->fetch(PDO::FETCH_NUM)[0];
+                $statement = $this->connection->prepare("SELECT NAME FROM TAG WHERE ID IN(SELECT TAG_ID FROM USED_TAGS WHERE POST_ID='{$post_array[0]}')");
+                $statement->execute();
+                $post_obj->tags = $statement->fetchAll(PDO::FETCH_NUM);
                 return $post_obj;
             }
             catch(PDOException $error){

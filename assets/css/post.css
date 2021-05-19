@@ -7,8 +7,8 @@ Error: Undefined variable: "$pink".
 3: }
 4: .post-header-links:hover{
 5:     color:$brown;
-6: }
-7: #post-container{
+6:     text-decoration: none;
+7: }
 
 Backtrace:
 sass/post.scss:2
@@ -65,4 +65,4 @@ sass/post.scss:2
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$pink\".\A         on line 2 of sass/post.scss\A \A 1: .post-header-links{\A 2:     color:$pink;\A 3: }\A 4: .post-header-links:hover{\A 5:     color:$brown;\A 6: }\A 7: #post-container{"; }
+  content: "Error: Undefined variable: \"$pink\".\A         on line 2 of sass/post.scss\A \A 1: .post-header-links{\A 2:     color:$pink;\A 3: }\A 4: .post-header-links:hover{\A 5:     color:$brown;\A 6:     text-decoration: none;\A 7: }"; }

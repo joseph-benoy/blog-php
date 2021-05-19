@@ -10,7 +10,8 @@
         public $cover_image;
         public $content;
         public $views;
-        public function __construct($id,$title,$title_slag,$author,$date,$description,$cover_image,$content,$views,$author_name=null){
+        public $tags;
+        public function __construct($id,$title,$title_slag,$author,$date,$description,$cover_image,$content,$views,$tags=null,$author_name=null){
             $this->id = $id;
             $this->title = $title;
             $this->title_slag = $title_slag;
@@ -21,6 +22,7 @@
             $this->content = $content;
             $this->views = $views;
             $this->author_name = $author_name;
+            $this->tags = $tags;
         }
     }
 ?>

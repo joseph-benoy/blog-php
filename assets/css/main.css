@@ -83,7 +83,8 @@
   color: #f55c47; }
 
 .post-header-links:hover {
-  color: #564a4a; }
+  color: #564a4a;
+  text-decoration: none; }
 
 #post-container {
   padding: 2.5vw 10vw !important; }
@@ -100,5 +101,18 @@
   font-size: 1.4em;
   margin-top: 4vh;
   white-space: pre-wrap; }
+
+.post-tags-link {
+  color: #f55c47;
+  background-color: rgba(0, 0, 0, 0.12);
+  padding: 0.5em 1em; }
+
+.post-tags-link:hover {
+  color: #f55c47;
+  text-decoration: none; }
+
+#post-container h5 {
+  font-family: bold-font;
+  color: #f55c47; }
 
 /*# sourceMappingURL=main.css.map */

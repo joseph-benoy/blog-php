@@ -126,6 +126,14 @@
             echo '<div class="row text-center" id="post-content-row">';
                 echo '<pre id="post-content">'.$post->content.'</pre>';
             echo '</div>';
+            echo "<hr>";
+            echo "<h5>Tags<h5>";
+            echo '<div class="row">';
+                foreach($post->tags as $tag){
+                    echo '<a class="post-tags-link" href="category.php?category='.$tag[0].'">'.$tag[0].'</a>&nbsp;&nbsp;&nbsp;&nbsp;';
+                }
+            echo '</div>';
+            echo '<hr>';
         }
         catch(Exception $error){
             error_log("display_post_error : {$error->getMessage()}",0);
