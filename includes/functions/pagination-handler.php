@@ -12,7 +12,12 @@
                 </a>
                 </li>';
                 for($i=1;$i<=$total_pages;$i++){
-                    echo '<li class="page-item"><a class="page-link" href="?page='.$i.'">'.$i.'</a></li>';
+                    if($page_no==$i){
+                        echo '<li class="page-item"><a style="color:#564a4a;" class="page-link" href="?page='.$i.'">'.$i.'</a></li>';
+                    }
+                    else{
+                        echo '<li class="page-item"><a class="page-link" href="?page='.$i.'">'.$i.'</a></li>';
+                    }
                 }
                 if($page_no!=$total_pages){
                     echo '<li class="page-item">

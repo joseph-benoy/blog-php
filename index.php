@@ -22,7 +22,13 @@
             require_once("includes/functions/pagination-handler.php");
             if(isset($_GET['page']))
             {
-                display_index_posts($_GET['page']);
+                $page_no = htmlentities($_GET['page']);
+                if(is_numeric($page_no)){
+                    display_index_posts($page_no);
+                }
+                else{
+                    echo '<h1>Something went wrong!</h1>';
+                }
             }
             else{
                 display_index_posts(1);
