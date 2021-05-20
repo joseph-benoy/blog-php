@@ -125,7 +125,8 @@
         public function get_posts_by_date($date,$page_no,$posts_per_page){
             try{
                 $offset = ($page_no-1)*$posts_per_page;
-                $statement = $this->connection->prepare("SELECT COUNT(*) AS COUNT FROM POST WHERE DATE='{$date}'");
+                $statement = $this->connection->prepare("SELECT COUNT(*) AS COUNT FROM POST WHERE DATE=:date");
+                $statement->bindParam(":date",$date);
                 $statement->execute();
                 $total_posts = $statement->fetch(PDO::FETCH_ASSOC)['COUNT'];
                 $no_of_pages = ceil($total_posts/$posts_per_page);

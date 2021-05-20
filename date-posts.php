@@ -13,6 +13,23 @@
     <script src="assets/bootstrap/bootstrap.min.js"></script>
 </head>
 <body>
-<?php require_once("includes/components/header.php"); ?>  
+    <?php require_once("includes/components/header.php");?>  
+    <div class="container-fluid" id="pagination-container">  
+        <?php 
+            require_once("includes/functions/pagination-handler.php");
+            if(isset($_GET['date'])){
+                if(isset($_GET['page']))
+                {
+                    display_date_posts($_GET['date'],$_GET['page']);
+                }
+                else{
+                    display_date_posts($_GET['date'],1);
+                }
+            }
+            else{
+                echo "<h1>Something went wrong! Please go back to home page.</h1>";
+            }
+        ?>
+    </div>
 </body>
 </html>
