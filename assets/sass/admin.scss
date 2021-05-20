@@ -1,12 +1,22 @@
 #admin-container{
     border:5px solid $pink;
+    @media only screen and (max-width:1199px){
+        border: none;
+    }
 }
 #admin-img{
     width: 10%;
     margin-top: 2vh;
+    margin-bottom: 2vh;
+    @media only screen and (max-width:1199px) {
+        width: 40%;
+    }
 }
 #admin-page-container{
-    padding: 5vw 8vw;
+    padding: 4vw 8vw;
+    @media only screen and (max-width:1199px){
+        padding: 5vw 3vw;
+    }
 }
 #admin-bio{
     white-space: pre-wrap;
