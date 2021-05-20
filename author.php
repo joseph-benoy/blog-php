@@ -20,7 +20,13 @@
     <a id="post-go-top" class="go-to-top"><i class="bi bi-arrow-up"></i></a>
         <?php 
             require_once("includes/functions/display-admin.php");
-            display_admin($_GET['id']);
+            if(isset($_GET['id'])){
+                $url = htmlentities($_GET['id']);
+                display_admin($url);
+            }
+            else{
+                echo '<h1>Something went wrong!</h1>';
+            }
         ?>
     </div>  
 </div>

@@ -23,12 +23,19 @@
         <?php 
             require_once("includes/functions/pagination-handler.php");
             if(!isset($_SESSION['id'])){
-                $_SESSION['id'] = "sreergerfgegfe";
                 $url = htmlentities($_GET['url']);
+                $_SESSION['id'] = $url;
                 display_post($url,true);
             }
             else{
-                display_post($url,false);
+                $url = htmlentities($_GET['url']);
+                if($_SESSION['id']!=$url){
+                    $_SESSION['id'] = $url;
+                    display_post($url,true);
+                }
+                else{
+                    display_post($url,false);
+                }
             }
         ?>
     </div>
