@@ -11,6 +11,7 @@
     <script src="assets/bootstrap/jquery.min.js"></script>
     <script src="assets/bootstrap/popper.min.js"></script>
     <script src="assets/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/js/style.js"></script>
 </head>
 <body>
 <?php require_once("includes/components/header.php"); ?>  

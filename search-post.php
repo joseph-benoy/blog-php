@@ -4,7 +4,7 @@
     {
         try{
             $db = new DB(...$GLOBALS['db_config_array']);
-            $result = $db->search_posts($_POST['val']);
+            $result = $db->search_posts(htmlentities($_POST['val']));
             if(empty($result)){
                 echo "0";
             }

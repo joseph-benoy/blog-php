@@ -11,6 +11,7 @@
     <script src="assets/bootstrap/jquery.min.js"></script>
     <script src="assets/bootstrap/popper.min.js"></script>
     <script src="assets/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/js/style.js"></script>
 </head>
 <body>
     <?php require_once("includes/components/header.php"); ?>  
@@ -23,6 +24,9 @@
                 if(isset($_POST['full_name'])&&isset($_POST['email'])&&isset($_POST['phone'])&&isset($_POST['message'])){
                     if(!($_POST['full_name']==""||$_POST['email']==""||$_POST['phone']==""||$_POST['message']=="")){
                         $db = new DB(...$GLOBALS['db_config_array']);
+                        array_walk($_POST,function(&$value){
+                            $value = htmlentities($value);
+                        });
                         if($db->save_message($_POST)){
                             echo '
                                 <div class="row">

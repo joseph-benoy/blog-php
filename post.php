@@ -24,10 +24,11 @@
             require_once("includes/functions/pagination-handler.php");
             if(!isset($_SESSION['id'])){
                 $_SESSION['id'] = "sreergerfgegfe";
-                display_post($_GET['url'],true);
+                $url = htmlentities($_GET['url']);
+                display_post($url,true);
             }
             else{
-                display_post($_GET['url'],false);
+                display_post($url,false);
             }
         ?>
     </div>
