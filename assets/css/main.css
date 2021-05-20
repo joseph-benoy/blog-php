@@ -153,6 +153,9 @@
   background-color: #f55c47;
   color: white; }
 
+.post-content-image {
+  width: 50%; }
+
 #contact-form {
   padding: 5vh 10vw; }
 
