@@ -11,11 +11,13 @@
     <script src="assets/bootstrap/jquery.min.js"></script>
     <script src="assets/bootstrap/popper.min.js"></script>
     <script src="assets/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/js/style.js"></script>
 </head>
 <body>
     <?php require_once("includes/components/header.php");?>
     <div class="container-fluid"id="admin-page-container" >
     <div class="container-fluid" id="admin-container">
+    <a id="post-go-top" class="go-to-top"><i class="bi bi-arrow-up"></i></a>
         <?php 
             require_once("includes/functions/display-admin.php");
             display_admin($_GET['id']);

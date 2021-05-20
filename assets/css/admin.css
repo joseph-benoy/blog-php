@@ -7,8 +7,8 @@ Error: Undefined variable: "$pink".
 3: }
 4: #admin-img{
 5:     width: 10%;
-6: }
-7: #admin-page-container{
+6:     margin-top: 2vh;
+7: }
 
 Backtrace:
 sass/admin.scss:2
@@ -69,4 +69,4 @@ sass/admin.scss:2
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$pink\".\A         on line 2 of sass/admin.scss\A \A 1: #admin-container{\A 2:     border:5px solid $pink;\A 3: }\A 4: #admin-img{\A 5:     width: 10%;\A 6: }\A 7: #admin-page-container{"; }
+  content: "Error: Undefined variable: \"$pink\".\A         on line 2 of sass/admin.scss\A \A 1: #admin-container{\A 2:     border:5px solid $pink;\A 3: }\A 4: #admin-img{\A 5:     width: 10%;\A 6:     margin-top: 2vh;\A 7: }"; }

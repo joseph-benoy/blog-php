@@ -212,13 +212,18 @@
   border: 5px solid #f55c47; }
 
 #admin-img {
-  width: 10%; }
+  width: 10%;
+  margin-top: 2vh; }
 
 #admin-page-container {
   padding: 5vw 8vw; }
 
 #admin-bio {
   white-space: pre-wrap;
-  text-align: justify; }
+  text-align: justify;
+  font-family: base-font;
+  font-size: 1.2em;
+  margin-top: 1vh;
+  display: block; }
 
 /*# sourceMappingURL=main.css.map */
