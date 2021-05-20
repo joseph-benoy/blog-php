@@ -116,7 +116,7 @@
             echo '</div>';
             echo '<hr>';
             echo '<div class="row">';
-                echo '<a class="post-header-links" href="author.php?name='.$post->author_name.'"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;'.$post->author_name.'</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+                echo '<a class="post-header-links" href="author.php?id='.$post->author_id.'"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;'.$post->author_name.'</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
                 echo '<a class="post-header-links" href="date-posts.php?date='.$post->date.'"><i class="bi bi-calendar-check"></i>&nbsp;&nbsp;'.$post->date.'</a>';
             echo '</div>';
             echo "<hr>";

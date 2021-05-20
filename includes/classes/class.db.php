@@ -109,5 +109,18 @@
                 error_log("Save message error : {$error->getMessage()}");
             }
         }
+        public function get_admin($id){
+            try{
+                $statement = $this->connection->prepare("SELECT ID,FULL_NAME,EMAIL,CAST(AES_DECRYPT(PASSWORD,'key') AS CHAR) AS PASSWORD,PROFILE_PIC_LOCATION,BIO FROM ADMIN WHERE ID=:id");
+                $statement->bindParam(":id",$id);
+                $statement->execute();
+                $admin_array = $statement->fetch(PDO::FETCH_NUM);
+                $admin = new Admin(...$admin_array);
+                return $admin;
+            }
+            catch(PDOException $error){
+                error_log("Get admin error : {$error->getMessage()}");
+            }
+        }
     }
 ?>

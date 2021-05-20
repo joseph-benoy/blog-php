@@ -15,7 +15,7 @@
             $this->id = $id;
             $this->title = $title;
             $this->title_slag = $title_slag;
-            $this->author = $author;
+            $this->author_id = $author;
             $this->date = $date;
             $this->description = $description;
             $this->cover_image = $cover_image;

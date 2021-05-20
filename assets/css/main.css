@@ -208,4 +208,17 @@
   border: 3px solid #f55c47;
   font-family: medium-font; }
 
+#admin-container {
+  border: 5px solid #f55c47; }
+
+#admin-img {
+  width: 10%; }
+
+#admin-page-container {
+  padding: 5vw 8vw; }
+
+#admin-bio {
+  white-space: pre-wrap;
+  text-align: justify; }
+
 /*# sourceMappingURL=main.css.map */

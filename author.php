@@ -13,7 +13,14 @@
     <script src="assets/bootstrap/bootstrap.min.js"></script>
 </head>
 <body>
-<?php require_once("includes/components/header.php");?>
-  
+    <?php require_once("includes/components/header.php");?>
+    <div class="container-fluid"id="admin-page-container" >
+    <div class="container-fluid" id="admin-container">
+        <?php 
+            require_once("includes/functions/display-admin.php");
+            display_admin($_GET['id']);
+        ?>
+    </div>  
+</div>
 </body>
 </html>
