@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +22,13 @@
         <a id="post-go-top" class="go-to-top"><i class="bi bi-arrow-up"></i></a>
         <?php 
             require_once("includes/functions/pagination-handler.php");
-            display_post($_GET['url']);
+            if(!isset($_SESSION['id'])){
+                $_SESSION['id'] = "sreergerfgegfe";
+                display_post($_GET['url'],true);
+            }
+            else{
+                display_post($_GET['url'],false);
+            }
         ?>
     </div>
 </body>

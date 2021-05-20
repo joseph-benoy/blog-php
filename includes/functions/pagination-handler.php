@@ -109,11 +109,13 @@
             error_log("Pagination error : $error->getMessage()",0);
         }
     }
-    function display_post($title_slag){
+    function display_post($title_slag,$view_flag){
         try{
             $db = new DB(...$GLOBALS['db_config_array']);
             $post = $db->get_post($title_slag);
-            $db->increment_view($title_slag);
+            if($view_flag){
+                $db->increment_view($title_slag);
+            }
             echo '<div class="row">';
                 echo '<h1>'.$post->title.'</h1>';
             echo '</div>';
