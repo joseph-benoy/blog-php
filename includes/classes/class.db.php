@@ -143,5 +143,15 @@
                 error_log("Get posts by date error : {$error->getMessage()}");
             }
         }
+        public function increment_view($title_slag){
+            try{
+                $statement = $this->connection->prepare("UPDATE POST SET VIEWS=VIEWS+1 WHERE TITLE_SLAG=:slag");
+                $statement->bindParam(':slag',$title_slag);
+                return $statement->execute();
+            }
+            catch(Exception $error){
+                error_log("Increment views error : {$error->getMessage()}");
+            }
+        }
     }
 ?>
