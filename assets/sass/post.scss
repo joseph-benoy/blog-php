@@ -53,6 +53,7 @@
     color: white;
     top:80vh;
     right:4vw;
+    z-index: 500;
     @media only screen and (max-width:1199px) {
         display: none;
         padding: 4vw 4.5vw;
@@ -68,4 +69,7 @@
 }
 .post-content-image{
     width: 50%;
+}
+#admin-email{
+    color: $pink;
 }

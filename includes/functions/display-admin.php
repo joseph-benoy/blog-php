@@ -15,7 +15,7 @@
         echo '</div>';
         echo '<div class="row text-center">';
             echo '<div class="col-12">';
-                echo '<a href="mailto:'.$admin->email.'">'.$admin->email.'</a>';
+                echo '<a id="admin-email" href="mailto:'.$admin->email.'">'.$admin->email.'</a>';
             echo '</div>';
         echo '</div>';
         echo '<div class="row">';

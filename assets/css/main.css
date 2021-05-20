@@ -139,7 +139,8 @@
   border-radius: 2em;
   color: white;
   top: 80vh;
-  right: 4vw; }
+  right: 4vw;
+  z-index: 500; }
   @media only screen and (max-width: 1199px) {
     .go-to-top {
       display: none;
@@ -155,6 +156,9 @@
 
 .post-content-image {
   width: 50%; }
+
+#admin-email {
+  color: #f55c47; }
 
 #contact-form {
   padding: 5vh 10vw; }
