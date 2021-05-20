@@ -1,30 +1,21 @@
 <?php
     require_once("includes/config.php");
     function display_page_btn($page_no,$total_pages){
-        echo '            
-        <nav aria-label="Page navigation example" id="page-btns">   
-        <ul class="pagination justify-content-center">
-            <li class="page-item prev">
-            <a class="page-link" href="?page='.($page_no-1).'" tabindex="-1">        
-                <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Previous</span>
-            </a>
-            </li>';
-            for($i=1;$i<=$total_pages;$i++){
-                echo '<li class="page-item"><a class="page-link" href="?page='.$i.'">'.$i.'</a></li>';
-            }
-            if($page_no!=$total_pages){
-                echo '<li class="page-item">
-                <a class="page-link" href="?page='.($page_no+1).'">
-                    <span aria-hidden="true">&raquo;</span>
-                    <span class="sr-only">Next</span>
+        if($total_pages!=1){
+            echo '            
+            <nav aria-label="Page navigation example" id="page-btns">   
+            <ul class="pagination justify-content-center">
+                <li class="page-item prev">
+                <a class="page-link" href="?page='.($page_no-1).'" tabindex="-1">        
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
                 </a>
-                </li>
-            </ul>
-            </nav>';
-            }
-            else{
-                    echo '<li class="page-item  disabled ">
+                </li>';
+                for($i=1;$i<=$total_pages;$i++){
+                    echo '<li class="page-item"><a class="page-link" href="?page='.$i.'">'.$i.'</a></li>';
+                }
+                if($page_no!=$total_pages){
+                    echo '<li class="page-item">
                     <a class="page-link" href="?page='.($page_no+1).'">
                         <span aria-hidden="true">&raquo;</span>
                         <span class="sr-only">Next</span>
@@ -32,7 +23,18 @@
                     </li>
                 </ul>
                 </nav>';
-            }        
+                }
+                else{
+                        echo '<li class="page-item  disabled ">
+                        <a class="page-link" href="?page='.($page_no+1).'">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                        </li>
+                    </ul>
+                    </nav>';
+                } 
+        }       
     }
     function display_index_posts($page_no)
     {
