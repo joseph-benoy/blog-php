@@ -57,9 +57,8 @@
                     <div class="card-body">
                         <h5 class="card-title">'.$post['TITLE'].'</h5>
                         <p class="card-text" style="color:rgba(0,0,0,0.6);">'.$post['DESCRIPTION'].'</p>
-                        <p class="card-text" style="color:rgba(0,0,0,0.7);font-size:0.9em;"><i class="bi bi-calendar-check"></i>&nbsp;&nbsp;'.$post['DATE'].'</p>
-                        <a href="post.php?url='.$post['TITLE_SLAG'].'" class="btn btn-primary read-more-btn">Read more</a>
-                    </div>
+                        <a style="display:block;margin-bottom:0.05vh;" class="card-text post-header-links" href="date-posts.php?date='.$post['DATE'].'"><i class="bi bi-calendar-check"></i>&nbsp;&nbsp;'.$post['DATE'].'</a><br>'.'                        <a href="post.php?url='.$post['TITLE_SLAG'].'" class="btn btn-primary read-more-btn">Read more</a>'.
+                    '</div>
                 </div>
             </div>';
                 if($col_count>0){
@@ -93,9 +92,8 @@
                     <div class="card-body">
                         <h5 class="card-title">'.$post['TITLE'].'</h5>
                         <p class="card-text" style="color:rgba(0,0,0,0.6);">'.$post['DESCRIPTION'].'</p>
-                        <p class="card-text" style="color:rgba(0,0,0,0.7);font-size:0.9em;"><i class="bi bi-calendar-check"></i>&nbsp;&nbsp;'.$post['DATE'].'</p>
-                        <a href="post.php?url='.$post['TITLE_SLAG'].'" class="btn btn-primary read-more-btn">Read more</a>
-                    </div>
+                        <a style="display:block;margin-bottom:0.05vh;" class="card-text post-header-links" href="date-posts.php?date='.$post['DATE'].'"><i class="bi bi-calendar-check"></i>&nbsp;&nbsp;'.$post['DATE'].'</a><br>'.'                        <a href="post.php?url='.$post['TITLE_SLAG'].'" class="btn btn-primary read-more-btn">Read more</a>'.
+                    '</div>
                 </div>
             </div>';
                 if($col_count>0){
@@ -164,7 +162,6 @@
                     <div class="card-body">
                         <h5 class="card-title">'.$post['TITLE'].'</h5>
                         <p class="card-text" style="color:rgba(0,0,0,0.6);">'.$post['DESCRIPTION'].'</p>
-                        <p class="card-text" style="color:rgba(0,0,0,0.7);font-size:0.9em;"><i class="bi bi-calendar-check"></i>&nbsp;&nbsp;'.$post['DATE'].'</p>
                         <a href="post.php?url='.$post['TITLE_SLAG'].'" class="btn btn-primary read-more-btn">Read more</a>
                     </div>
                 </div>

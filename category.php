@@ -21,17 +21,22 @@
         <?php 
             require_once("includes/functions/pagination-handler.php");
             if(isset($_GET['category'])){
-                echo '<h2 id="category_title">Results for '.$_GET['category'].'</h2>';
+                echo '<h2 id="category_title">Posts about '.htmlentities($_GET['category']).'</h2>';
                 if(isset($_GET['page']))
                 {
-                    display_category_posts($_GET['category'],$_GET['page']);
+                    if(is_numeric(htmlentities($_GET['page']))){
+                        display_category_posts(htmlentities($_GET['category']),htmlentities($_GET['page']));
+                    }
+                    else{
+                        echo "<h1>Something went wrong</h1>";
+                    }
                 }
                 else{
-                    display_category_posts($_GET['category'],1);
+                    display_category_posts(htmlentities($_GET['category']),1);
                 }
             }
             else{
-                echo "Error occured! Go back to home page";
+                echo "<h1>Something went wrong</h1>";
             }
         ?>
     </div>

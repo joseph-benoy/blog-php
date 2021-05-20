@@ -17,12 +17,17 @@
     <?php require_once("includes/components/header.php");?>  
     <div class="container-fluid" id="pagination-container">  
         <?php 
-            echo '<h2 style="margin-top:2vh;">Posts on '.$_GET['date'].'</h2>';
+            echo '<h2 style="margin-top:2vh;">Posts on '.htmlentities($_GET['date']).'</h2>';
             require_once("includes/functions/pagination-handler.php");
             if(isset($_GET['date'])){
                 if(isset($_GET['page']))
                 {
-                    display_date_posts($_GET['date'],$_GET['page']);
+                    if(is_numeric(htmlentities($_GET['page']))){
+                        display_date_posts(htmlentities($_GET['date']),htmlentities($_GET['page']));
+                    }
+                    else{
+                        echo "<h1>Something went wrong! Please go back to home page.</h1>";
+                    }
                 }
                 else{
                     display_date_posts($_GET['date'],1);
