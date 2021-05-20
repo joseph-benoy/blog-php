@@ -16,6 +16,7 @@
     <?php require_once("includes/components/header.php");?>  
     <div class="container-fluid" id="pagination-container">  
         <?php 
+            echo '<h2 style="margin-top:2vh;">Posts on '.$_GET['date'].'</h2>';
             require_once("includes/functions/pagination-handler.php");
             if(isset($_GET['date'])){
                 if(isset($_GET['page']))
