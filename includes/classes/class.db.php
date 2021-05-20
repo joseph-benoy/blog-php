@@ -122,5 +122,25 @@
                 error_log("Get admin error : {$error->getMessage()}");
             }
         }
+        public function get_posts_by_date($date,$page_no,$posts_per_page){
+            try{
+                $offset = ($page_no-1)*$posts_per_page;
+                $statement = $this->connection->prepare("SELECT COUNT(*) AS COUNT FROM POST WHERE DATE='{$date}'");
+                $statement->execute();
+                $total_posts = $statement->fetch(PDO::FETCH_ASSOC)['COUNT'];
+                $no_of_pages = ceil($total_posts/$posts_per_page);
+                $statement = $this->connection->prepare("SELECT ID,TITLE,TITLE_SLAG,DATE,COVER_IMAGE_LOCATION,DESCRIPTION FROM POST WHERE DATE=:date LIMIT $offset,$posts_per_page");
+                $statement->bindParam(":date",$date);
+                $statement->execute();
+                $pageination_obj = new stdClass;
+                $pageination_obj->posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+                $pageination_obj->total_post_count = $total_posts;
+                $pageination_obj->no_of_pages = $no_of_pages;
+                return $pageination_obj;
+            }
+            catch(PDOException $error){
+                error_log("Get posts by date error : {$error->getMessage()}");
+            }
+        }
     }
 ?>
