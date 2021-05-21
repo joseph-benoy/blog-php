@@ -1,7 +1,5 @@
 # Blog CMS
 
-[![PHP](https://www.php.net/images/logos/php-logo.svg)](https://www.php.net)
-
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 Simple blog CMS built using vanilla PHP and mysql database.
