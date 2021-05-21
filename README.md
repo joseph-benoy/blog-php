@@ -4,6 +4,19 @@
 
 Simple blog CMS built using vanilla PHP and mysql database.
 
+## Configure the CMS
+Edit the `config.php` file in the `/includes` directory and change the values of the following constants.
+```php
+//config.php
+<?php
+    define('SERVER','hostname');
+    define('USER','username');
+    define('PASSWORD','password');
+    define('DATABASE','database_name');
+    define('POSTS_PER_PAGE',no_of_posts_in_index_page);
+?>
+```
+
 ## License
 
 MIT
