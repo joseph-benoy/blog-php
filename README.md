@@ -1,6 +1,6 @@
 # Blog CMS
 
-[![PHP](https://cldup.com/dTxpPi9lDf.thumb.png)](https://www.php.net)
+[![PHP](https://www.php.net/images/logos/php-logo.svg)](https://www.php.net)
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
